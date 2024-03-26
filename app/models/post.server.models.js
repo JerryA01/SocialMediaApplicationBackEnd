@@ -32,7 +32,7 @@ db.get(sql, [post_id], function(err, post_details) { //postdeails checks if post
      db.each( 
          sql,
          [post_id],
-         (err, row) => {             //check if any errors for each row and refers them up to the controller if there are any, if not add each like to array
+         (err, row) => {             // check if any errors for each row and refers them up to the controller if there are any, if not add each like to array
              if(err) return done(err);     
                
                 
