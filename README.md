@@ -1,24 +1,61 @@
-# Chirrup Starter Code
+## SocialMediaApplication
 
-**For the full-stack web development assignment 23/24**
+Here i have created a Social Media Application for university students named Chirrup. It allows students to create an account and login to engage with other students via post's. 
+This consists of a frontend and a backend which run Jointly. The backend server needs to be ran first before running the front end. Once this is running the front end repository is on my Github with instructions on how to run it.
 
-Steps to download and run:
-1. Make sure you have NodeJS installed on your machine ([Download NodeJS](https://nodejs.org/en/download/))
-2. Make sure you have Git installed on your machine ([Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
-2. In your terminal, navigate to the directory where you want to download the project
-3. Run `git clone https://github.com/ash-williams/fsd_chirrup_server`
-4. Once the project has finished downloading, navigate into the projects root directory `cd fsd_chirrup_server`
-5. Run `npm install` to install all dependencies for the project
-6. Once the dependencies have installed, run the server using `npm run dev`. You will see a message saying that the server is running on port 3333.
-7. In a **separate terminal window** navigate to the projects root directory and run `npm run test` to run the tests. The tests will mostly fail, but that is because we have not yet written any code.
+## Table of Contents
+- [Overview] (#Overview)
+- [Video walkthrough of the application] (#Walkthrough)
+- [Video walkthrough on how to install and use this on your local machine] (#HowToUseVideo)
+- [Installation&Usage] (#installation&Usage)
+  
 
-Once you have completed the above, you are set up and ready to begin work on the assignment.
+## Overview
 
-**Things to remember:**
-1. To re-run the tests, you can first wipe the DB by running `npm run wipe`. The tests assume a fresh database each time.
-2. The tests may have mistakes too, check your work manually (using Postman). If you're not sure, ask.
-3. The API documentation is located on Swagger [here](https://app.swaggerhub.com/apis/MMU-SE/Chirrup/1.0.0/#/)
+I programmed a Full Stack Application which is a social media application named Chirrup. Here you can follow users, create posts and engage with people's posts by liking them, updating them and many more. 
 
-If you have any issues, come see me in the labs.
+I did this in Javascript with the help of using the NodeJs framework and libraries from the NodeJS framework like express, Joi for validation and SQLite for database management. 
 
-Ash
+I used the VUE framework for my front end and used the bootstrap style framework for the UX - User Experience.
+
+This was programmed to a predefined specification which is here https://app.swaggerhub.com/apis/MMU-SE/Chirrup/1.0.0/#/
+
+I used the RESTful API for communications between the front end and the backend. Using the fetch library to handle API requests in the frontend.
+
+For the backend I interacted with the database using the SQLite DB library. I structred this using the MVC structure pattern to make it look more proffesional, seperating the backend into three interconnected elements view, controller and model.
+
+With the help of the Joi Library and access tokens i handled authentication and authorization. This ensured only logged in users can create posts, edit posts and enage with other people like follow them or like their posts.
+I implemented profanity filters on the backend for posts to ensure any offensive language does not make it into the application.
+
+
+
+
+## Walkthrough
+
+https://www.youtube.com/watch?v=e2Op1XRsc7Q&list=PL9IcuQG2EKM1SyWShtdSMBJAEPEviD7Ti&index=1&t=6s
+
+
+## HowToUseVideo
+
+https://www.youtube.com/watch?v=aOoWgRKTkuA&list=PL9IcuQG2EKM1SyWShtdSMBJAEPEviD7Ti&index=2&t=13s
+
+
+
+## installation&Usage
+Instructions - Refer to the ##HowToUseVideo if you are having difficulty.
+
+Create a folder 
+
+cd into that folder in your IDE'S terminal
+
+git init - to create a new repository
+
+git clone https://github.com/JerryA01/SocialMediaApplicationBackEnd.git
+
+cd into the SocialMediaApplicationBackEnd folder
+
+type "npm run dev" to run the application
+
+Backend application should now be running. 
+
+Now, we have this running we can now run the front end. The front end repository is on my Github with instructions on how to run it.
