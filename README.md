@@ -28,6 +28,26 @@ With the help of the Joi Library and access tokens i handled authentication and 
 I implemented profanity filters on the backend for posts to ensure any offensive language does not make it into the application.
 
 
+🛠️ Tech Stack
+Backend:
+-Node.js
+-Express.js
+-SQLite
+-Joi (validation)
+-CORS
+-Morgan
+-Body-parser
+
+Frontend:
+-Vue.js
+-Vite
+-Bootstrap 5
+-Font Awesome
+-HTML5, CSS3
+
+Architecture:
+-MVC pattern
+-RESTful API
 
 
 ## Walkthrough
