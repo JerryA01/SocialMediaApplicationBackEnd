@@ -75,5 +75,5 @@ cd into the SocialMediaApplicationBackEnd folder
 type "npm run dev" to run the application
 
 Backend application should now be running. 
-
-Now, we have this running we can now run the front end. The front end repository is on my Github with instructions on how to run it.
+ 
+Now, we have this running we can now run the front end. Insturctions on how to run it here --> https://github.com/JerryA01/SocialMediaApplicationFrontEnd
