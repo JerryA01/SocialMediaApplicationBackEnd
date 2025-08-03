@@ -68,8 +68,6 @@ Create a folder
 
 cd into that folder in your IDE'S terminal
 
-git init - to create a new repository
-
 git clone https://github.com/JerryA01/SocialMediaApplicationBackEnd.git
 
 cd into the SocialMediaApplicationBackEnd folder
