@@ -1,4 +1,4 @@
-const db = require("../../database");  
+const db = require("../../database");
 
 
 const getLikesForPost = (post_id, done) => {
@@ -8,7 +8,7 @@ const getLikesForPost = (post_id, done) => {
         sql,
         [post_id],
         (err, row) => {
-            if(err) return done(err);
+            if (err) return done(err);
 
             likes.push({
                 user_id: row.user_id,
@@ -19,7 +19,7 @@ const getLikesForPost = (post_id, done) => {
 
         },
         (err) => {
-            if(err) return done(err);
+            if (err) return done(err);
 
             return done(null, likes)
         }
@@ -39,7 +39,7 @@ const getAllPosts = (done) => {
         sql,
         [],
         (err, row) => {
-            if(err){
+            if (err) {
                 return done(err);
             }
 
@@ -57,29 +57,29 @@ const getAllPosts = (done) => {
         },
 
         (err, num_rows) => {
-            if(err) return done(err);
+            if (err) return done(err);
 
             let count = 0;
 
             console.log("Get the likes")
 
             posts.forEach((post) => {
-                
+
                 getLikesForPost(post.post_id, (err, likes) => {
 
-                    if(err) return done(err);
+                    if (err) return done(err);
 
                     post['likes'] = likes;
-                    count ++;
+                    count++;
                     console.log(post, count)
-                    if(count === posts.length){
+                    if (count === posts.length) {
                         return done(null, posts)
                     }
                 })
             })
 
 
-            
+
         }
     )
 }
@@ -90,14 +90,14 @@ const getFollowerPosts = (user_id, done) => {
                     FROM posts p, users u
                     WHERE p.author_id = u.user_id 
                     AND (u.user_id IN (SELECT follower_id FROM followers WHERE user_id = ?) OR p.author_id = ?)
-                    ORDER BY p.date_published DESC`  
+                    ORDER BY p.date_published DESC`
     console.log("here")
     const posts = [];
     db.each(
         sql,
         [user_id, user_id],
         (err, row) => {
-            if(err){
+            if (err) {
                 return done(err);
             }
 
@@ -115,21 +115,21 @@ const getFollowerPosts = (user_id, done) => {
         },
 
         (err, num_rows) => {
-            if(err) return done(err);
+            if (err) return done(err);
             let count = 0;
 
             console.log("Get the likes")
 
             posts.forEach((post) => {
-                
+
                 getLikesForPost(post.post_id, (err, likes) => {
 
-                    if(err) return done(err);
+                    if (err) return done(err);
 
                     post['likes'] = likes;
-                    count ++;
+                    count++;
                     console.log(post, count)
-                    if(count === posts.length){
+                    if (count === posts.length) {
                         return done(null, posts)
                     }
                 })

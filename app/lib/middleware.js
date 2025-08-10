@@ -1,12 +1,12 @@
 const users = require('../models/user.server.models');
 
 
-const isAuthenticated = function(req, res, next){
+const isAuthenticated = function (req, res, next) {
     let token = req.get('X-Authorization');
 
     console.log(token)
 
-    if(!token || token === null){
+    if (!token || token === null) {
         return res.sendStatus(401);
     }
 

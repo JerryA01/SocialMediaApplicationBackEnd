@@ -1,7 +1,7 @@
-const users = require('../controllers/user.server.controllers'); 
+const users = require('../controllers/user.server.controllers');
 const auth = require('../lib/middleware')
 
-module.exports = function(app){                             
+module.exports = function (app) {
     app.route('/users')
         .post(users.add_user);
 
