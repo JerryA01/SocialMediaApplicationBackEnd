@@ -11,7 +11,9 @@ module.exports = function(app){
     .get(users.get_user);
 
     app.route('/search')
-        .get(users.get_search);
+        .get(users.get_search)
+    
+    app.route('/searchloggedin')
+        .get(auth.isAuthenticated, users.get_search_loggedin)
    
-
 };

@@ -224,6 +224,23 @@ const get_search = (req, res) => {
 };
 
 
+const get_search_loggedin = (req, res) => {
+    let q = req.query.q;
+    users.searching(q,(err, result) => {
+        if(err === 500){
+            return res.sendStatus(500)
+        }
+        else if(err === 404){
+            return res.sendStatus(404)
+        }
+        else{
+            return res.status(200).send(result)
+        }
+    }) 
+};
+
+
+
 module.exports = {  
   add_user: add_user,
   login: login,
@@ -231,6 +248,7 @@ module.exports = {
   get_user: get_user,
   follow_user: follow_user,
   unfollow_user: unfollow_user,
-  get_search: get_search
+  get_search: get_search,
+  get_search_loggedin: get_search_loggedin
 };
 
